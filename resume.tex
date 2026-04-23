@@ -1,0 +1,214 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    footskip=1.0cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={SOORYAN AP's CV},
+    pdfauthor={Sooryan AP},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=RoyalBlue,
+    linkcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Ensure that generated PDF is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10cm,
+        parsep=0.10cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0cm}{0cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[1]{
+    \onecolentry
+    \def\secondColumn{#1}
+    \setcolumnwidth{\fill, 4.5cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+% Last updated command (use at end if desired)
+\newcommand{\placelastupdatedtext}{%
+  \AddToShipoutPictureFG*{%
+    \put(\LenToUnit{\paperwidth-2cm},\LenToUnit{\paperheight-1.0cm}){%
+      \vtop{{\null}\makebox[0pt][c]{%
+        \small\color{gray}\textit{Last updated in September 2024}%
+      }}}%
+  }%
+}
+
+\begin{document}
+
+    % Header
+\begin{center}
+    {\fontsize{26}{28}\selectfont \textbf{Sooryan AP}}\\[6pt]
+    \normalsize
+    Dublin, Ireland \,|\,
+    \href{tel:+353894992592}{+353 89 499 2592} \,|\,
+    \href{mailto:sooryanap3@gmail.com}{sooryanap3@gmail.com} \,|\,
+    \href{https://linkedin.com/in/sooryan-ap-2711a4228}{linkedin.com/in/sooryan-ap-2711a4228}
+\end{center}
+
+    \vspace{0.4cm}
+
+    % Summary
+    \section{SUMMARY}
+    \begin{onecolentry}
+    Graduate Engineer specialized in Artificial Intelligence \& Data Science with an overall CGPA of 8.30 and a Masters in Data Analytics. Programming foundations in Python, Java, and SQL. Experienced in MEAN stack development, data analysis, and machine learning projects. Skilled in problem solving, teamwork, and delivering scalable technical solutions. Seeking to contribute to innovative engineering teams in leading organizations.
+    \end{onecolentry}
+
+    \vspace{0.2cm}
+
+    % Internship
+    \section{INTERNSHIP}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Mean Stack Intern}, Inmakes Infotech -- Kochi \hfill \emph{Sept 2024 – Jan 2025}
+            \begin{itemize}[leftmargin=15pt]
+                \item Built and deployed full-stack web applications using Angular, Node.js, Express, and MongoDB, enhancing system performance and scalability.
+                \item Developed and integrated secure RESTful APIs with JWT authentication, improving data integrity and user access control.
+                \item Optimized database queries and schema design in MongoDB, reducing response time and improving overall efficiency.
+            \end{itemize}
+            \item \textbf{Network Engineering Course}, Paavai College of Engineering -- Salem \hfill \emph{June 2023 – Sept 2023}
+            \begin{itemize}[leftmargin=15pt]
+                \item Configured and troubleshot network devices (Cisco routers \& switches), ensuring secure and reliable connectivity.
+                \item Implemented secure network topologies with VLANs, firewalls, and VPNs, strengthening application and data security.
+                \item Applied networking concepts to optimize API communication and client-server performance in MEAN stack applications.
+            \end{itemize}
+        \end{highlights}
+    \end{onecolentry}
+
+    % Education
+    \section{EDUCATION}
+    \begin{onecolentry}
+        \textbf{Dublin Business School}, MSc in Data Analytics (Ireland) \hfill Jan 2025 – Dec 2025 (Present)\\
+        \textbf{Anna University}, B.Tech Artificial Intelligence \& Data Science (India) \hfill Sep 2020 – Sep 2024\\
+        CGPA: 8.3/10
+    \end{onecolentry}
+
+    % Courses and Certifications
+    \section{COURSES AND CERTIFICATIONS}
+    \begin{onecolentry}
+        \begin{tabularx}{\linewidth}{X X}
+            MEAN Stack Internship & Python Programming Course \\
+            Google Data Analytics (Coursera) & Cisco Networking Academy \\
+            Accenture Project Management & Network Engineering Course \\
+        \end{tabularx}
+    \end{onecolentry}
+
+    % Projects
+    \section{PROJECTS}
+    \begin{onecolentry}
+         \textbf{Predictive Analytics for E-commerce Customer Lifetime
+Value Using Multi-Source Data Integration}
+        \begin{highlights}
+            \item Developed a Customer Lifetime Value (CLV) prediction system using the Olist Brazilian E-commerce Dataset, integrating multi-source data (transactions, reviews, payments, and geolocation) and applying advanced machine learning models including Random Forest and XGBoost
+        \item \textbf{Tools:} Python, Scikit-learn, XGBoost, Random Forest, Pandas, Streamlit, Data Analytics, Feature Engineering
+        \href{https://github.com/sooryanap/Predictive-Analaytics-of-E-commerce-Customer-lifetime-value}{GitHub Repository} \\
+\vspace{2mm}
+        \end{highlights}
+        \textbf{Design and Development of Data Storage Solutions for Analysis}
+        \begin{highlights}
+            \item Designed scalable data pipelines using ETL processes and Neo4j for complex relationship modeling, ensuring efficient data integration and querying.
+            \item Built interactive Tableau dashboards and automated SSRS reports, enhancing real-time decision-making and reducing query latency by 40\%.
+            \item \textbf{Tools:} ETL, Tableau, Neo4j, SSRS (SQL Server Reporting Services)
+        \end{highlights}
+        \vspace{0.2cm}
+        \textbf{Detection of Speech Emotion Using Deep Learning}
+        \begin{highlights}
+            \item Developed and implemented a speech emotion detection system utilizing deep learning architectures (CNN, LSTM) and advanced audio feature extraction techniques (MFCC), achieving robust classification of emotional states from audio signals.
+            \item Engineered end-to-end data pipelines for preprocessing, feature engineering, and model training, utilizing TensorFlow, Keras, and Librosa for accurate real-time emotion recognition.
+            \item \textbf{Tools:} Python, TensorFlow, Keras, Librosa, NumPy, Pandas, Matplotlib, MFCC, CNN, LSTM, Jupyter Notebook
+        \end{highlights}
+        \vspace{0.2cm}
+        \textbf{Implementation of Conformal LSTM Classifier to Detect Anomalies}
+        \begin{highlights}
+            \item Designed and implemented a conformal LSTM-based anomaly detection system, using deep learning techniques to accurately identify outliers in sequential data, enhancing reliability and interpretability.
+            \item \textbf{Tools:} Python, TensorFlow, Keras, NumPy, Pandas, Matplotlib, Conformal Prediction, LSTM, Scikit-learn, Time Series Analysis
+        \end{highlights}
+        \vspace{0.2cm}
+    \end{onecolentry}
+
+    % Skills
+       \section{SKILLS}
+    \begin{onecolentry}
+        \textbf{Programming Languages:} Python, Java, SQL\\
+        \textbf{Web \& Backend Development:} Node.js, Express.js, HTML, RESTful API Development, Angular, MongoDB, Full-Stack Web Development\\
+        \textbf{Machine Learning \& Data Science:} Data preprocessing, Feature engineering, TF-IDF, Text Classification, CNN, Decision Trees, Model evaluation, Scikit-learn, Deep Learning\\
+        \textbf{Tools \& Platforms:} Git, GitHub, Jupyter Notebook, Visual Studio Code, Microsoft Excel, Amazon Web Services, Power BI, Tableau, SQL Server\\
+        \textbf{Networking:} Subnetting, Routing, Switching, Network Protocols
+    \end{onecolentry}
+
+% Optionally include last updated watermark
+% \placelastupdatedtext
+
+\end{document}
