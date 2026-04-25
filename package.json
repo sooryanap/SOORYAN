@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://sooryanap.github.io/portfolio",
+  "homepage": "https://sooryanap.github.io/SOORYAN/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
